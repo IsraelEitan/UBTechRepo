@@ -1,0 +1,44 @@
+<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+
+  <mat-form-field>
+      <input matInput placeholder="Search" aria-label="State" [matAutocomplete]="auto" [formControl]="searchPersonCtrl">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayProperty" (optionSelected)="onSelectionChange($event)">
+        <mat-option *ngIf="isLoading" class="is-loading">Loading...</mat-option>
+        <ng-container *ngIf="!isLoading">
+          <mat-option *ngFor="let person of filteredPersons" [value]="person" >
+            <span>{{person.firstName}} {{person.lastName}}</span>
+          </mat-option>
+        </ng-container>
+      </mat-autocomplete>
+  </mat-form-field>
+
+  <br>
+
+  <button class="btn btn-lg btn-outline-primary"  (click)="open(persondetails)" [disabled]="!this.selectionValid">Search</button>
+
+  <ng-container *ngIf="errorMsg; else elseTemplate">
+    {{errorMsg}}
+  </ng-container>
+</div>
+
+
+<ng-template #persondetails let-modal>
+  <div class="modal-header" fxLayout="row" fxLayoutAlign="center center">
+    <h4 class="modal-title" id="modal-basic-title">Person Details</h4>
+  </div>
+  <div class="modal-body" fxLayout="row" fxLayoutAlign="space-evenly center" fxLayoutGap="20px">
+    <div fxLayout="column" fxLayoutAlign="start" fxLayoutGap="10px">
+      <div><h4>First Name</h4>  <h3>{{this.searchPersonCtrl.value.firstName}}</h3></div>
+      <div><h4>Last Name</h4> <h3>{{this.searchPersonCtrl.value.lastName}}</h3></div>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="start" fxLayoutGap="10px">
+      <div><h4>Role</h4> <h3>{{this.searchPersonCtrl.value.role}}</h3></div>
+      <div><h4>Age</h4> <h3>{{this.searchPersonCtrl.value.age}}</h3></div>   
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-sm" (click)="modal.close('Save click')">Ok</button>
+  </div>
+</ng-template>
+
+
