@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UBTechApi", "UBTechApi\UBTechApi.csproj", "{1556A243-DBB3-43D0-9FA8-1726B52D0C48}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UBTech.Data", "..\..\..\Downloads\UBTech-master\UBTech-master\UBTech.Data\UBTech.Data.csproj", "{854A9364-BDF7-4F0F-97FB-00C169FDA4CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UBTech.Data", "UBTech.Data\UBTech.Data.csproj", "{854A9364-BDF7-4F0F-97FB-00C169FDA4CF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UBTech.Service", "..\..\..\Downloads\UBTech-master\UBTech-master\UBTech.Service\UBTech.Service.csproj", "{D2878548-A315-4DAB-813B-97BF34A962DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UBTech.Service", "UBTech.Service\UBTech.Service.csproj", "{D2878548-A315-4DAB-813B-97BF34A962DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
